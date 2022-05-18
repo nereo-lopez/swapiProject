@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRXT2MZw1T"
+            crossorigin="anonymous"
+        />    
+        <style type = "text/css">
+
+            body{
+
+                background-image: url(goodBackground.gif);
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: 100% 100%;
+            }
+        </style>
+        <title>Star Wars API</title>
+
+    </head>
+    <body class = "container">
+        <header class = "text-center pt-5">
+            <a href = "https://swapi.co/">
+                <img src="https://fontmeme.com/permalink/195012/15d72ad95ac1a2b65ffcba268ccc8c78.png" alt="">
+            </a>
+        <div id="buttons" class="text-center mb-5">
+            <div class="div.btn-group.btn-group-toggle.pt-5" data-toggle="buttons">
+                <label class="btn btn-lg btn-outline-light">
+                    <input type="radio" name="options" id="films" autocomplete="off">Films
+                </label>
+            </div>
+        </div>
+
+        <div id="results" class="card-columns"></div>
+        
+        <script
+            src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa33DZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+        
+        <script
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgy0dp3pXB1rRibZUAYoIIy60rQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+        
+        <script src="main.js"></script>
+        </header>
+    </body>
+</html>
