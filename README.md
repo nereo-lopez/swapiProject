@@ -1,0 +1,2 @@
+# swapiProject
+Javascript API practice
