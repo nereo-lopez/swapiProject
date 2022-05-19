@@ -1,0 +1,40 @@
+.flex-grid-thirds{
+
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.flex-grid-thirds .col {
+
+    width: 30%;
+}
+
+.card{
+
+    border: 2px solid whitesmoke;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 20px;
+}
+
+.text-center{
+
+    text-align: center;
+}
+
+.film-image{
+
+    width: 135px;
+    margin-top: 20px;
+}
+
+.filmCard {
+
+    position: relative;
+    top: 50%;
+    left: 35%;
+    border: 3px solid whitesmoke;
+    padding: 10px 20px 100px;
+    color: whitesmoke;
+  }

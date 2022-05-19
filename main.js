@@ -1,38 +1,64 @@
-const results = document.querySelector("#results");
+//Pagina principal//
 
-async function asyncFetch(value){
+const getFilms = fetch("https://swapi.dev/api/films").then(r=>r.json()
+    ).then(data => {
 
-    const res = await fetch(`https:swapi.co/api/${value}/`);
-    const data = await res.json();
-    displayResults(data, value);
-}
+    return data;
+});
 
-function displayResults(data, value){
+const getFilmsImages = (films) => {
 
-    let output = "";
-    console.log(data);
-    if(value === 'films'){
+    for(let i=0; i<films.length; i++) {
 
-        data.results.forEach(item => {
-            
-            output += `
-                <div class="card p-3 m-3" style="opacity:.8">
-                    <h4 class="card-title text-center">${item.title}</h4>
-                    <div class="card-content">
-                        <span style="text-decoration:underline">Episode</span>:${item.episode_id}
-                        <span style="text-decoration:underline">Director</span>:${item.director}
-                        <span style="text-decoration:underline">Producer</span>:${item.producer}
-                    </div>
-                </div>
-            `
-        })
+        films[i].image = 'images/film' + (i+1) + '.jpg';
     }
-
-    results.innerHTML= output;
+    return films;
 }
 
-//Event listener//
-document.querySelector("#buttons").addEventListener("click", e =>{
-    asyncFetch(e.target.textContent.trim().toLowerCase());
-})
+window.onload = async () => {
 
+    let data = await getFilms;
+    let films = getFilmsImages(data.results);
+    for(let i=0; i<films.length; i++) {
+
+        //Iteraciones para crear elementos//
+        let container = document.createElement("div");
+        container.className = "col text-center card";
+
+        //Iteraciones para los titulos//
+        let h2Container = document.createElement("h2");
+        h2Container.innerText = films[i].title;
+
+        //Iteraciones para las imagenes//
+        let imgContainer = document.createElement("img");
+        imgContainer.src = films[i].image;
+        imgContainer.className = "film-image";
+
+        container.appendChild(imgContainer);
+        container.appendChild(h2Container);
+
+        document.getElementById("films").appendChild(container);
+    }
+};
+
+//Pagina 1//
+
+const getFilm1 = fetch("https://swapi.dev/api/films").then(r=>r.json()
+    ).then(data => {
+
+    return data;
+});
+
+window.onload = async() => {
+
+    let data = await getFilm1;
+    let container2 = document.createElement("div");
+    container2.className = "col text-center card";
+
+    let h2Container = document.createElement("h2");
+    h2Container.innerText = data.title;
+
+    container2.appendChild(h2Container);
+
+    document.getElementById("data").appendChild(container2);
+} 
