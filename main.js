@@ -6,7 +6,7 @@ const getFilms = fetch("https://swapi.dev/api/films").then(r=>r.json()
     return data;
 });
 
-const getFilmsImages = (films) => {
+const getFilmsData = (films) => {
 
     for(let i=0; i<films.length; i++) {
 
@@ -18,7 +18,7 @@ const getFilmsImages = (films) => {
 window.onload = async () => {
 
     let data = await getFilms;
-    let films = getFilmsImages(data.results);
+    let films = getFilmsData(data.results);
     for(let i=0; i<films.length; i++) {
 
         //Iteraciones para crear elementos//
@@ -41,24 +41,64 @@ window.onload = async () => {
     }
 };
 
-//Pagina 1//
+//Episodio IV//
 
-const getFilm1 = fetch("https://swapi.dev/api/films").then(r=>r.json()
-    ).then(data => {
+let request = "https://swapi.dev/api/films/1"
 
-    return data;
-});
+fetch(request).then((response) => {
 
-window.onload = async() => {
+    return response.json();
+}).then( (data) => {
 
-    let data = await getFilm1;
-    let container2 = document.createElement("div");
-    container2.className = "col text-center card";
+    let p = document.getElementById("name");
+    console.log(data);
+    p.innerHTML = JSON.stringify(data.title);
+})
 
-    let h2Container = document.createElement("h2");
-    h2Container.innerText = data.title;
+let episode = "https://swapi.dev/api/films/1"
 
-    container2.appendChild(h2Container);
+fetch(episode).then((response) => {
 
-    document.getElementById("data").appendChild(container2);
-} 
+    return response.json();
+}).then( (data) => {
+
+    let p = document.getElementById("episode");
+    console.log(data);
+    p.innerHTML = JSON.stringify(data.episode_id);
+})
+
+let director = "https://swapi.dev/api/films/1"
+
+fetch(director).then((response) => {
+
+    return response.json();
+}).then( (data) => {
+
+    let p = document.getElementById("director");
+    console.log(data);
+    p.innerHTML = JSON.stringify(data.director);
+})
+
+let producer = "https://swapi.dev/api/films/1"
+
+fetch(producer).then((response) => {
+
+    return response.json();
+}).then( (data) => {
+
+    let p = document.getElementById("producer");
+    console.log(data);
+    p.innerHTML = JSON.stringify(data.producer);
+})
+
+let characters = "https://swapi.dev/api/films/1"
+
+fetch(characters).then((response) => {
+
+    return response.json();
+}).then( (data) => {
+
+    let p = document.getElementById("characters");
+    console.log(data);
+    p.innerHTML = JSON.stringify(data.characters);
+})

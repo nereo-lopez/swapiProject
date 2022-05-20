@@ -1,3 +1,5 @@
+/* Pagina principal */
+
 .flex-grid-thirds{
 
     display: flex;
@@ -16,11 +18,13 @@
     cursor: pointer;
     border-radius: 5px;
     margin: 20px;
+    color: whitesmoke;
 }
 
 .text-center{
 
     text-align: center;
+    color: whitesmoke;
 }
 
 .film-image{
@@ -28,6 +32,8 @@
     width: 135px;
     margin-top: 20px;
 }
+
+/* Peliculas individuales */
 
 .filmCard {
 
@@ -37,4 +43,4 @@
     border: 3px solid whitesmoke;
     padding: 10px 20px 100px;
     color: whitesmoke;
-  }
+}
