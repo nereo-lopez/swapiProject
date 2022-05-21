@@ -1,37 +1,76 @@
 /* Pagina principal */
-
-.flex-grid-thirds{
-
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-
-.flex-grid-thirds .col {
-
-    width: 30%;
-}
-
-.card{
+.card1{
 
     border: 2px solid whitesmoke;
     cursor: pointer;
     border-radius: 5px;
-    margin: 20px;
+    margin: 10px;
     color: whitesmoke;
-}
-
-.text-center{
-
+    float:left;
+    margin-top: 200px;
     text-align: center;
+}
+
+.card2{
+
+    border: 2px solid whitesmoke;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 10px;
     color: whitesmoke;
+    margin-top: 200px;
+    float:left;
+    text-align: center;
 }
 
-.film-image{
+.card3{
 
-    width: 135px;
-    margin-top: 20px;
+    border: 2px solid whitesmoke;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 10px;
+    color: whitesmoke;
+    margin-top: 200px;
+    float:left;
+    text-align: center;
 }
+
+.card4{
+
+    border: 2px solid whitesmoke;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 10px;
+    color: whitesmoke;
+    margin-top: 200px;
+    float:left;
+    text-align: center;
+}
+
+.card5{
+
+    border: 2px solid whitesmoke;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 10px;
+    color: whitesmoke;
+    margin-top: 200px;
+    float:left;
+    text-align: center;
+}
+
+.card6{
+
+    border: 2px solid whitesmoke;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 10px;
+    color: whitesmoke;
+    margin-top: 200px;
+    float:left;
+    text-align: center;
+}
+
 
 /* Peliculas individuales */
 
@@ -39,8 +78,10 @@
 
     position: relative;
     top: 50%;
-    left: 35%;
-    border: 3px solid whitesmoke;
+    left: 40%;
+    border: 5px solid rgb(63, 61, 61);
     padding: 10px 20px 100px;
-    color: whitesmoke;
+    color: black;
+    font-style:italic;
+    background-color: aliceblue;
 }

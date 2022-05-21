@@ -15,6 +15,11 @@ const getFilmsData = (films) => {
     return films;
 }
 
+function goToFilm(i) {
+
+    window.location.href=films[i].url;
+}
+
 window.onload = async () => {
 
     let data = await getFilms;

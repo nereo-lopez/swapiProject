@@ -1,5 +1,10 @@
 let request = "https://swapi.dev/api/films/1"
-let characters;
+
+var filmChars = ['https://swapi.dev/api/people/1/', 'https://swapi.dev/api/people/2/', 'https://swapi.dev/api/people/3/',
+'https://swapi.dev/api/people/4/', 'https://swapi.dev/api/people/5/', 'https://swapi.dev/api/people/6/', 'https://swapi.dev/api/people/7/',
+'https://swapi.dev/api/people/8/', 'https://swapi.dev/api/people/9/', 'https://swapi.dev/api/people/10/', 'https://swapi.dev/api/people/12/',
+'https://swapi.dev/api/people/13/', 'https://swapi.dev/api/people/14/', 'https://swapi.dev/api/people/15/', 'https://swapi.dev/api/people/16/',
+'https://swapi.dev/api/people/18/', 'https://swapi.dev/api/people/19/', 'https://swapi.dev/api/people/81/'];
 
 fetch(request).then((response) => {
 
@@ -7,32 +12,44 @@ fetch(request).then((response) => {
 }).then( (data) => {
 
     let p = document.getElementById("name");
-    console.log(data);
     p.innerHTML = JSON.stringify(data.title);
 
     let p1 = document.getElementById("episode");
-    console.log(data);
     p1.innerHTML = JSON.stringify(data.episode_id);
 
     let p2 = document.getElementById("director");
-    console.log(data);
     p2.innerHTML = JSON.stringify(data.director);
 
     let p3 = document.getElementById("producer");
-    console.log(data);
     p3.innerHTML = JSON.stringify(data.producer);
 
-    for(i=0; i<=18; i++) {
+    callCharacters();
+})
+
+async function callCharacters () {
+
+    for(let i=0; i<filmChars.length; i++){
+
+        fetch(filmChars[i]).then((response) => {
+            
+            return response.json();
+        }).then( (data) => {
+
+        console.log(data);
 
         let container = document.createElement("div");
         container.className = "text";
 
-        let h2Container = document.createElement("h2");
-        h2Container.innerText = characters[i].name;
+        let h2Container = document.createElement("text");
+        h2Container.innerText = JSON.stringify(data.name);
 
         container.appendChild(h2Container);
 
-        document.getElementById("character").appendChild(container);
+        document.getElementById("characters").appendChild(container);
+
+        return data;
+        });
     }
-})
+}
+
 
