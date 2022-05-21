@@ -1,2 +1,2 @@
 # swapiProject
-Javascript API practice
+Javascript API project.
